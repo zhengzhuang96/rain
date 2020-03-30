@@ -1,6 +1,7 @@
 library flutter_eui;
 
 export "package:flutter_eui/widget/eui_flat_button.dart";
+export 'package:flutter_eui/widget/eui_appbar.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';

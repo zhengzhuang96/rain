@@ -1,9 +1,9 @@
 /*
  * @Author: zhengzhuang
  * @since: 2020-03-14 11:38:27
- * @lastTime: 2020-03-14 11:46:28
+ * @lastTime: 2020-03-30 10:33:37
  * @LastAuthor: zhengzhuang
- * @FilePath: /flutter_eui/example/lib/widget/eui_flat_button.dart
+ * @FilePath: /flutter_eui/lib/widget/eui_flat_button.dart
  * @message: button组件
  */
 import 'package:flutter/material.dart';

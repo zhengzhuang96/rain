@@ -7,6 +7,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_eui/flutter_eui.dart';
 import 'package:flutter_eui_example/home_page.dart';
 
+import 'pages/button_list.dart';
+
 void main() {
   runApp(MyApp());
   if (Platform.isAndroid) {
@@ -57,6 +59,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       routes: {
         HomeTab.routeName: (context) => HomeTab(),
+        ButtonList.routeName: (context) => ButtonList(),
       },
     );
   }
