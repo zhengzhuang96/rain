@@ -1,8 +1,7 @@
 name: rain
-description: A new Flutter plugin.
+description: 轻量、可靠的移动端 Flutter 组件库
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/zhengzhuang96/rain.git
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
