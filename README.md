@@ -8,13 +8,13 @@
 ## 安装
 在你的`pubspec.yaml`文件的dependencies节点下添加:
 ```
-flutter_eui:
-    git: https://github.com/zhengzhuang96/flutter_eui.git
+rain:
+    git: https://github.com/zhengzhuang96/rain.git
 ```
 
 导入:
 ```
-import 'package:flutter_eui/flutter_eui.dart';
+import 'package:rain/rain.dart';
 ```
 
 ## TODO LIST:
