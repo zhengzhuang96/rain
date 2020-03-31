@@ -10,7 +10,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: EuiAppBar(barHeight: 0),
+      appBar: EuiAppBar(barHeight: 0, textColor: Colors.red, popState: true),
       body: SafeArea(
         child: Container(
           child: ListView(
@@ -31,8 +31,7 @@ class _HomePageState extends State<HomePage> {
                 margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 decoration: BoxDecoration(
                   color: Colors.black12,
-                  borderRadius: BorderRadius.circular(50.0),
-                ),
+                  borderRadius: BorderRadius.circular(50.0)),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(50.0),
                   child: Container(
@@ -42,8 +41,7 @@ class _HomePageState extends State<HomePage> {
                       children: <Widget>[
                         Text(
                           'Button 按钮',
-                          style:
-                              TextStyle(fontSize: 14.0, color: Colors.black45),
+                          style: TextStyle(fontSize: 14.0, color: Colors.black45),
                         ),
                         Icon(Icons.navigate_next, color: Colors.black26)
                       ],
@@ -52,12 +50,29 @@ class _HomePageState extends State<HomePage> {
                   onTap: () => Navigator.pushNamed(context, '/buttonList'),
                 ),
               ),
-              // EuiFlatButton(
-              //   color: Colors.black12,
-              //   padding: EdgeInsets.fromLTRB(100.0, 10.0, 100.0, 10.0),
-              //   onPressed: () {},
-              //   child: Text('data'),
-              // ),
+              Container(
+                margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
+                decoration: BoxDecoration(
+                    color: Colors.black12,
+                    borderRadius: BorderRadius.circular(50.0)),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(50.0),
+                  child: Container(
+                    padding: EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          'Cell 单元格',
+                          style: TextStyle(fontSize: 14.0, color: Colors.black45),
+                        ),
+                        Icon(Icons.navigate_next, color: Colors.black26)
+                      ],
+                    ),
+                  ),
+                  onTap: () => Navigator.pushNamed(context, '/buttonList'),
+                ),
+              ),
             ],
           ),
         ),
