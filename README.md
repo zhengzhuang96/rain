@@ -8,10 +8,8 @@
 ## 安装
 在你的`pubspec.yaml`文件的dependencies节点下添加:
 ```
-
 flutter_eui:
- git: https://github.com/zhengzhuang96/flutter_eui.git
-
+    git: https://github.com/zhengzhuang96/flutter_eui.git
 ```
 
 导入:
@@ -22,15 +20,17 @@ import 'package:flutter_eui/flutter_eui.dart';
 ## TODO LIST:
 * 运行中UI
     * [x] 基础组件
-        * [x] Button
+        * [x] [Button](example/lib/pages/button_list.dart)
+        * [x] [AppBar](example/lib/pages/button_list.dart)
 * 未来开发中
     * [ ] 表单组件
         * [ ] 开发中...
     * [ ] 反馈组件
-        * [x ] 开发中...
+        * [] 开发中...
     * [ ] 展示组件
         * [ ] 开发中...
     * [ ] 导航组件
         * [ ] 开发中...
     * [ ] 业务组件
         * [ ] 开发中...
+
