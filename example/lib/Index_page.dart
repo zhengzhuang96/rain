@@ -1,81 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_eui/flutter_eui.dart';
+import 'package:flutter_eui_example/Home_page.dart';
 
-class HomePage extends StatefulWidget {
+class IndexPage extends StatefulWidget {
+
+  IndexPage({Key key, this.title}) : super(key: key);
+  final String title;
+
   @override
-  _HomePageState createState() => _HomePageState();
+  _IndexPageState createState() => _IndexPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _IndexPageState extends State<IndexPage> {
+  int _currentIndex = 0;
+  // List pages = [HomePage(), DynamicPage(), AboutPage()];
+  List pages = [HomePage(), Text('1'), Text('2')];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: EuiAppBar(barHeight: 0, textColor: Colors.red, popState: true),
-      body: SafeArea(
-        child: Container(
-          child: ListView(
-            padding: EdgeInsets.only(left: 20.0, right: 20.0),
-            children: <Widget>[
-              SizedBox(height: 30.0),
-              Text('FlutterEui',
-                  style: TextStyle(
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87)),
-              Text('轻量、可靠的移动端Flutter组件库',
-                  style: TextStyle(fontSize: 15.0, color: Colors.black26)),
-              SizedBox(height: 30.0),
-              Text('基础组件',
-                  style: TextStyle(fontSize: 13.0, color: Colors.black26)),
-              Container(
-                margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                decoration: BoxDecoration(
-                  color: Colors.black12,
-                  borderRadius: BorderRadius.circular(50.0)),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(50.0),
-                  child: Container(
-                    padding: EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          'Button 按钮',
-                          style: TextStyle(fontSize: 14.0, color: Colors.black45),
-                        ),
-                        Icon(Icons.navigate_next, color: Colors.black26)
-                      ],
-                    ),
-                  ),
-                  onTap: () => Navigator.pushNamed(context, '/buttonList'),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
-                decoration: BoxDecoration(
-                    color: Colors.black12,
-                    borderRadius: BorderRadius.circular(50.0)),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(50.0),
-                  child: Container(
-                    padding: EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          'Cell 单元格',
-                          style: TextStyle(fontSize: 14.0, color: Colors.black45),
-                        ),
-                        Icon(Icons.navigate_next, color: Colors.black26)
-                      ],
-                    ),
-                  ),
-                  onTap: () => Navigator.pushNamed(context, '/buttonList'),
-                ),
-              ),
-            ],
+      body: pages[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.apps),
+            title: Text('widgets'),
           ),
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.aspect_ratio),
+            title: Text('dynamic'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info_outline),
+            title: Text('about'),
+          )
+        ],
+        currentIndex: _currentIndex,
+        onTap: (index) => setState(() => _currentIndex = index),
       ),
     );
   }

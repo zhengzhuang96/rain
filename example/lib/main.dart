@@ -1,13 +1,9 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'dart:async';
-
 import 'package:flutter/services.dart';
 import 'package:flutter_eui/flutter_eui.dart';
-import 'package:flutter_eui_example/home_page.dart';
-
-import 'pages/button_list.dart';
+import 'package:flutter_eui_example/router/Routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,52 +53,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'FLUTTEREUI',
       debugShowCheckedModeBanner: false,
-      routes: {
-        HomeTab.routeName: (context) => HomeTab(),
-        ButtonList.routeName: (context) => ButtonList(),
-      },
+      initialRoute: '/',  // 配置默认访问路径
+      onGenerateRoute: onGenerateRoute,
     );
   }
 }
 
-
-class HomeTab extends StatefulWidget {
-  static const String routeName = '/';
-
-  HomeTab({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _HomeTabState createState() => _HomeTabState();
-}
-
-class _HomeTabState extends State<HomeTab> {
-  int _currentIndex = 0;
-  // List pages = [HomePage(), DynamicPage(), AboutPage()];
-  List pages = [HomePage(), Text('1'), Text('2')];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: pages[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.apps),
-            title: Text('widgets'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.aspect_ratio),
-            title: Text('dynamic'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.info_outline),
-            title: Text('about'),
-          )
-        ],
-        currentIndex: _currentIndex,
-        onTap: (index) => setState(() => _currentIndex = index),
-      ),
-    );
-  }
-}
